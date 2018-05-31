@@ -1,0 +1,60 @@
+<head>
+  <title>open-inv</title>
+</head>
+
+<body>
+  <h1>Open-Inv</h1>
+
+  <!-- {{> hello}}
+  {{> info}} -->
+
+  <h2>Items</h2>
+  {{#each items}}
+    {{> item}}
+  {{/each}}
+
+  <h2>Properties</h2>
+  {{#each properties}}
+    {{> property}}
+  {{/each}}
+
+  <h2>Events</h2>
+  {{#each events}}
+    {{> event}}
+  {{/each}}
+</body>
+
+<template name="items">
+  {{ItemNum}}
+  {{TimeStamp}}
+</template>
+<template name="properties">
+  {{PropertyNum}}
+  {{ItemNum}}
+  {{Key}}
+  {{Val}}
+</template>
+<template name="events">
+  {{EventNum}}
+  {{ItemNum}}
+  {{TimeStamp}}
+  {{Type}}
+  {{Key}}
+  {{Description}}
+</template>
+
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="info">
+  <h2>Learn Meteor!</h2>
+  <ul>
+    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
+    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
+    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
+    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
+  </ul>
+</template>
