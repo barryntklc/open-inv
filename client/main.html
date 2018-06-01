@@ -7,6 +7,21 @@
 
   <!-- {{> hello}}
   {{> info}} -->
+  <form class="new-task">
+    <!-- <input type="text" name="Type" placeholder="Type"> -->
+    <select name="Type">
+      <option value="computer_desktop">Computer - Desktop</option>
+      <option value="computer_laptop">Computer - Laptop</option>
+      <option value="printer_black_and_white">Printer - Black and White</option>
+      <option value="printer_color">Printer - Color</option>
+      <option value="switch">Switch</option>
+      <option value="router">Router</option>
+    </select>
+    <input type="text" name="Manufacturer" placeholder="Manufacturer">
+    <input type="text" name="Model" placeholder="Model">
+    <input type="text" name="PrimarySerial" placeholder="Primary Serial">
+    <input type="text" name="SecondarySerial" placeholder="Secondary Serial">
+  </form>
 
   <h2>Items</h2>
   {{#each items}}
