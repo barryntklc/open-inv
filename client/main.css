@@ -2,3 +2,8 @@
 body {
   font-family: Arial, san-serif;
 }
+
+.form-input {
+  height: 2.5em;
+  font-size: 1.2em;
+}

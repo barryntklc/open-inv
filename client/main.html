@@ -3,42 +3,61 @@
 </head>
 
 <body>
-  <h1>Open-Inv</h1>
 
-  <!-- {{> hello}}
-  {{> info}} -->
-  <form class="new-task">
-    <!-- <input type="text" name="Type" placeholder="Type"> -->
-    <select name="Type">
-      <option value="computer_desktop">Computer - Desktop</option>
-      <option value="computer_laptop">Computer - Laptop</option>
-      <option value="printer_black_and_white">Printer - Black and White</option>
-      <option value="printer_color">Printer - Color</option>
-      <option value="switch">Switch</option>
-      <option value="router">Router</option>
-    </select>
-    <input type="text" name="Manufacturer" placeholder="Manufacturer">
-    <input type="text" name="Model" placeholder="Model">
-    <input type="text" name="PrimarySerial" placeholder="Primary Serial">
-    <input type="text" name="SecondarySerial" placeholder="Secondary Serial">
-  </form>
+  <div class="container">
 
-  <h2>Items</h2>
-  {{#each items}}
-    {{> item}}
-  {{/each}}
+    <h1>Open-Inv</h1>
 
-  <h2>Properties</h2>
-  {{#each properties}}
-    {{> property}}
-  {{/each}}
+    <form class="new-item">
+      <select class="form-input" name="Type">
+        <option value="computer_desktop">Computer - Desktop</option>
+        <option value="computer_laptop">Computer - Laptop</option>
+        <option value="computer_laptop">Computer - Server</option>
+        <option value="printer_black_and_white">Printer - Black and White</option>
+        <option value="printer_color">Printer - Color</option>
+        <option value="printer_label">Printer - Label</option>
+        <option value="networking_switch">Networking - Switch</option> <!--managed, unmanaged-->
+        <option value="networking_router">Networking - Router</option>
+        <option value="networking_firewall">Networking - Firewall</option>
+        <option value="scanner">Scanner</option> <!--flatbed, adf, film-->
+        <option value="barcode_reader">Barcode Reader</option>
+        <option value="external_drive">External Drive</option>
+        <option value="color_printer">Miscellaneous</option>
+      </select>
+      <input class="form-input" type="text" name="Manufacturer" placeholder="Manufacturer">
+      <input class="form-input" type="text" name="Model" placeholder="Model">
+      <input class="form-input" type="text" name="Serial_Primary" placeholder="Primary Serial">
+      <input class="form-input" type="text" name="Serial_Secondary" placeholder="Secondary Serial">
+      <input class="form-input" type="submit" value="+">
+    </form>
 
-  <h2>Events</h2>
-  {{#each events}}
-    {{> event}}
-  {{/each}}
+    <!-- <h2>DBResults</h2> -->
+    {{#each dbresults}}
+      {{> dbresult}}
+    {{/each}}
+
+    <h2>Items</h2>
+    {{#each items}}
+      {{> item}}
+    {{/each}}
+
+    <h2>Properties</h2>
+    {{#each properties}}
+      {{> property}}
+    {{/each}}
+
+    <h2>Events</h2>
+    {{#each events}}
+      {{> event}}
+    {{/each}}
+
+  </div>
 </body>
 
+<template name="dbresults">
+  {{ItemNum}}
+  {{TimeStamp}}
+</template>
 <template name="items">
   {{ItemNum}}
   {{TimeStamp}}
@@ -57,7 +76,6 @@
   {{Key}}
   {{Description}}
 </template>
-
 
 <template name="hello">
   <button>Click Me</button>
